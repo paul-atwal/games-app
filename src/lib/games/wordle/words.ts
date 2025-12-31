@@ -15302,7 +15302,7 @@ export const VALID_GUESSES = new Set(ALL_VALID_WORDS);
 
 // Get today's word based on a fixed start date
 export function getTodaysWord(): string {
-  const startDate = new Date("2025-12-30"); // Day 1 = Dec 30, 2025
+  const startDate = new Date(2025, 11, 30); // Day 1 = Dec 30, 2025
   const today = new Date();
   today.setHours(0, 0, 0, 0); // Normalize to start of day
   const diffTime = today.getTime() - startDate.getTime();

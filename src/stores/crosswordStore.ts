@@ -13,7 +13,11 @@ interface CrosswordStore {
 }
 
 function getTodayString(): string {
-  return new Date().toISOString().split("T")[0];
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 export const useCrosswordStore = create<CrosswordStore>()(
@@ -34,10 +38,14 @@ export const useCrosswordStore = create<CrosswordStore>()(
       checkAndResetDaily: () => {
         const today = getTodayString();
         const todaysPuzzle = getTodaysPuzzle();
-        const { lastPuzzleId, state } = get();
+        const { lastPuzzleId, lastPlayedDate, state } = get();
 
         // If it's a new puzzle, reset the game
-        if (lastPuzzleId !== todaysPuzzle.id || state.puzzle.id !== todaysPuzzle.id) {
+        if (
+          lastPlayedDate !== today ||
+          lastPuzzleId !== todaysPuzzle.id ||
+          state.puzzle.id !== todaysPuzzle.id
+        ) {
           set({
             state: createInitialState(todaysPuzzle),
             lastPlayedDate: today,

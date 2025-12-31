@@ -82,8 +82,10 @@ export const CROSSWORD_PUZZLES: CrosswordPuzzle[] = [
 
 // Get puzzle by date (or index as fallback)
 export function getPuzzleForDate(date: Date): CrosswordPuzzle {
-  const startDate = new Date("2025-12-30");
-  const diffTime = date.getTime() - startDate.getTime();
+  const startDate = new Date(2025, 11, 30);
+  const normalizedDate = new Date(date);
+  normalizedDate.setHours(0, 0, 0, 0);
+  const diffTime = normalizedDate.getTime() - startDate.getTime();
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
   const index = Math.abs(diffDays) % CROSSWORD_PUZZLES.length;
   return CROSSWORD_PUZZLES[index];
