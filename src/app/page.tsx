@@ -13,12 +13,6 @@ const games = [
     href: "/games/connections",
     color: "bg-[#a0c35a]",
   },
-  {
-    name: "Crossword",
-    description: "Fill in the grid with clues",
-    href: "/games/crossword",
-    color: "bg-[#b0c4ef]",
-  },
 ];
 
 export default function Home() {

@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils/cn";
 const games = [
   { name: "Wordle", href: "/games/wordle" },
   { name: "Connections", href: "/games/connections" },
-  { name: "Crossword", href: "/games/crossword" },
 ];
 
 export function Header() {
