@@ -72,7 +72,9 @@ export function ConnectionsGame() {
     <div className="flex flex-col gap-6 max-w-lg mx-auto">
       {/* Header */}
       <div className="text-center">
-        <h2 className="font-serif text-xl md:text-2xl font-bold">Connections</h2>
+        <h2 className="font-[var(--font-display)] text-xl md:text-2xl font-semibold">
+          Connections
+        </h2>
         <p className="text-sm text-gray-500 mt-1">
           Group the 16 words into 4 categories of 4
         </p>

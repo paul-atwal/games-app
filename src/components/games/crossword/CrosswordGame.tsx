@@ -139,7 +139,9 @@ export function CrosswordGame() {
       {/* Header */}
       <div className="text-center">
         {puzzle.title && (
-          <h2 className="font-serif text-xl md:text-2xl font-bold">{puzzle.title}</h2>
+          <h2 className="font-[var(--font-display)] text-xl md:text-2xl font-semibold">
+            {puzzle.title}
+          </h2>
         )}
         {puzzle.author && (
           <p className="text-sm text-[var(--muted)]">by {puzzle.author}</p>

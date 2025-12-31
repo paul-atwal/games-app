@@ -9,7 +9,7 @@ export default function WordlePage() {
   return (
     <div className="max-w-lg mx-auto px-4 py-6">
       <div className="text-center mb-6">
-        <h1 className="font-serif text-2xl font-bold">Wordle</h1>
+        <h1 className="font-[var(--font-display)] text-2xl font-semibold">Wordle</h1>
         <p className="text-[var(--muted)] text-sm mt-1">
           Guess the word in 6 tries
         </p>

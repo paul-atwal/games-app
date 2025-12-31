@@ -13,13 +13,13 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="border-b border-[var(--border)]">
+    <header className="border-b border-[var(--border)] bg-[var(--background)]">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link
             href="/"
-            className="font-serif text-xl font-bold tracking-tight"
+            className="font-[var(--font-display)] text-xl font-bold tracking-tight"
           >
             Puzzles
           </Link>
@@ -33,8 +33,8 @@ export function Header() {
                 className={cn(
                   "px-3 py-2 text-sm font-medium rounded-md transition-colors",
                   pathname === game.href
-                    ? "bg-[var(--border)] text-[var(--foreground)]"
-                    : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--border)]/50"
+                    ? "bg-[var(--accent-soft)] text-[var(--foreground)]"
+                    : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--accent-soft)]"
                 )}
               >
                 {game.name}
@@ -76,12 +76,12 @@ function MobileMenu({ pathname }: { pathname: string }) {
             <Link
               key={game.href}
               href={game.href}
-              className={cn(
-                "block px-4 py-2 text-sm transition-colors",
-                pathname === game.href
-                  ? "bg-[var(--border)] text-[var(--foreground)]"
-                  : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--border)]/50"
-              )}
+                className={cn(
+                  "block px-4 py-2 text-sm transition-colors",
+                  pathname === game.href
+                    ? "bg-[var(--accent-soft)] text-[var(--foreground)]"
+                    : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--accent-soft)]"
+                )}
             >
               {game.name}
             </Link>

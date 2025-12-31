@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
-/* NYT/New Yorker Inspired Design Tokens */
+/* NYT-inspired design tokens */
 @theme inline {
   /* Typography */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Georgia", ui-serif, serif;
+  --font-sans: "Libre Franklin", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Source Serif 4", ui-serif, serif;
 
-  /* Colors - Warm neutral palette */
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -26,11 +26,14 @@
 }
 
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --muted: #78716c;
-  --border: #e7e5e4;
+  --background: #f6f5f2;
+  --foreground: #111111;
+  --muted: #5c5c5c;
+  --border: #dedbd4;
   --card: #ffffff;
+  --accent: #efede7;
+  --accent-strong: #111111;
+  --accent-soft: #f5f2ea;
 
   /* Tile dimensions */
   --wordle-tile-size: clamp(52px, 14vw, 62px);
@@ -40,17 +43,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1c1917;
-    --foreground: #fafaf9;
-    --muted: #a8a29e;
-    --border: #44403c;
-    --card: #292524;
+    --background: #171717;
+    --foreground: #f3f2ee;
+    --muted: #b1aca3;
+    --border: #2b2b2b;
+    --card: #1f1f1f;
+    --accent: #1b1b1b;
+    --accent-strong: #f3f2ee;
+    --accent-soft: #242424;
   }
 }
 
 /* Base styles */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
